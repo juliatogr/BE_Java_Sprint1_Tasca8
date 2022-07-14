@@ -1,10 +1,10 @@
-package n1exercici1;
+package n1exercici2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class N1_E1_main {
+public class N1_E2_main {
 
 	public static void main(String[] args){
 		
@@ -16,12 +16,11 @@ public class N1_E1_main {
 		
 		List<String> lsFiltered = filterOStrings(ls);
 		System.out.println(lsFiltered);
-		
 	}
 	
 	public static List<String> filterOStrings(List<String> ls){
 		
-		return ls.stream().filter(s -> s.contains("o")).toList();
+		return ls.stream().filter(s -> s.contains("o")).filter(s -> s.length()>5).toList();
 		
 	}
 
