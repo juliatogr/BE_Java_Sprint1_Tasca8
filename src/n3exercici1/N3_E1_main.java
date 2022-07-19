@@ -24,7 +24,8 @@ public class N3_E1_main {
 				new Alumne("Júlia", 26, "JAVA", 8),
 				new Alumne("Berta", 19, "DADES", 5)));
 		
-		alumnes.forEach(System.out::println);
+		alumnes.forEach(a->System.out.println(
+				"L'alumne/a " + a.getNom() + " té " + a.getEdat() + " anys."));
 	}
 
 }
