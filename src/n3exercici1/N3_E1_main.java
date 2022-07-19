@@ -15,11 +15,11 @@ public class N3_E1_main {
 		List<Alumne> alumnes = new ArrayList<>(Arrays.asList(
 				new Alumne("Pau", 20, "JAVA", 2),
 				new Alumne("Sandra", 18, "PHP", 5),
-				new Alumne("Arnau", 42, "DADES", 8),
+				new Alumne("Arnau", 16, "DADES", 8),
 				new Alumne("Carla", 26, "JAVA", 10),
 				new Alumne("Teresa", 23, "DADES", 7),
 				new Alumne("Joan", 30, "PHP", 3),
-				new Alumne("Ainhoa", 24, "DADES", 3),
+				new Alumne("Ainhoa", 17, "DADES", 3),
 				new Alumne("Marc", 35, "PHP", 9),
 				new Alumne("Júlia", 26, "JAVA", 8),
 				new Alumne("Berta", 19, "DADES", 5)));
@@ -47,6 +47,13 @@ public class N3_E1_main {
 				s-> s.getNota()>=5 && !s.getCurs().equals("PHP")).toList();
 		
 		alumnesFiltratsNotaPhp.forEach(a->System.out.println(a));
+		System.out.println();
+		
+		System.out.println("****Alumnes majors d'edat que fan JAVA****");
+		List<Alumne> alumnesFiltratsEdatJava = alumnes.stream().filter(
+				s-> s.getEdat()>=18 && !s.getCurs().equals("JAVA")).toList();
+		
+		alumnesFiltratsEdatJava.forEach(a->System.out.println(a));
 		System.out.println();
 		
 		
