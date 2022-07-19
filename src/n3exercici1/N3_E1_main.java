@@ -15,17 +15,25 @@ public class N3_E1_main {
 		List<Alumne> alumnes = new ArrayList<>(Arrays.asList(
 				new Alumne("Pau", 20, "JAVA", 2),
 				new Alumne("Sandra", 18, "PHP", 5),
-				new Alumne("Raul", 42, "DADES", 8),
+				new Alumne("Arnau", 42, "DADES", 8),
 				new Alumne("Carla", 26, "JAVA", 10),
 				new Alumne("Teresa", 23, "DADES", 7),
 				new Alumne("Joan", 30, "PHP", 3),
-				new Alumne("Marta", 24, "DADES", 3),
+				new Alumne("Ainhoa", 24, "DADES", 3),
 				new Alumne("Marc", 35, "PHP", 9),
 				new Alumne("Júlia", 26, "JAVA", 8),
 				new Alumne("Berta", 19, "DADES", 5)));
 		
 		alumnes.forEach(a->System.out.println(
 				"L'alumne/a " + a.getNom() + " té " + a.getEdat() + " anys."));
+		System.out.println();
+		List<Alumne> alumnesFiltratsComencenA = alumnes.stream().filter(
+				s-> s.getNom().charAt(0) == 'A').toList();
+		
+		System.out.println("****Alumnes filtrats perquè el seu nom comença per 'a'****");
+		alumnesFiltratsComencenA.forEach(a->System.out.println(
+				"L'alumne/a " + a.getNom() + " té " + a.getEdat() + " anys."));
+		
 	}
 
 }
