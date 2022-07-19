@@ -35,12 +35,19 @@ public class N3_E1_main {
 		alumnesFiltratsComencenA.forEach(a->System.out.println(a));
 		System.out.println();
 		
-		System.out.println("****Alumnes filtrats per nota de 5 o superior'****");
+		System.out.println("****Alumnes filtrats per nota de 5 o superior****");
 		List<Alumne> alumnesFiltratsNota = alumnes.stream().filter(
 				s-> s.getNota()>=5).toList();
 		
 		alumnesFiltratsNota.forEach(a->System.out.println(a));
-		System.out.println();		
+		System.out.println();	
+		
+		System.out.println("****Alumnes filtrats per nota de 5 o superior i que no son de PHP****");
+		List<Alumne> alumnesFiltratsNotaPhp = alumnes.stream().filter(
+				s-> s.getNota()>=5 && !s.getCurs().equals("PHP")).toList();
+		
+		alumnesFiltratsNotaPhp.forEach(a->System.out.println(a));
+		System.out.println();
 		
 		
 	}
