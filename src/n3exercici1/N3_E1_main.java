@@ -11,7 +11,7 @@ public class N3_E1_main {
 
 	public static void main(String[] args){
 		
-		System.out.println("****Alumnes actuals****");
+		System.out.println("****Nom i edat dels alumnes actuals****");
 		List<Alumne> alumnes = new ArrayList<>(Arrays.asList(
 				new Alumne("Pau", 20, "JAVA", 2),
 				new Alumne("Sandra", 18, "PHP", 5),
@@ -27,12 +27,21 @@ public class N3_E1_main {
 		alumnes.forEach(a->System.out.println(
 				"L'alumne/a " + a.getNom() + " té " + a.getEdat() + " anys."));
 		System.out.println();
+		
+		System.out.println("****Alumnes filtrats perquè el seu nom comença per 'a'****");
 		List<Alumne> alumnesFiltratsComencenA = alumnes.stream().filter(
 				s-> s.getNom().charAt(0) == 'A').toList();
 		
-		System.out.println("****Alumnes filtrats perquè el seu nom comença per 'a'****");
-		alumnesFiltratsComencenA.forEach(a->System.out.println(
-				"L'alumne/a " + a.getNom() + " té " + a.getEdat() + " anys."));
+		alumnesFiltratsComencenA.forEach(a->System.out.println(a));
+		System.out.println();
+		
+		System.out.println("****Alumnes filtrats per nota de 5 o superior'****");
+		List<Alumne> alumnesFiltratsNota = alumnes.stream().filter(
+				s-> s.getNota()>=5).toList();
+		
+		alumnesFiltratsNota.forEach(a->System.out.println(a));
+		System.out.println();		
+		
 		
 	}
 
